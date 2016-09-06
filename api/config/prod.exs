@@ -13,13 +13,13 @@ use Mix.Config
 # which you typically run after static files are built.
 config :peepchat, Peepchat.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  cache_static_manifest: "priv/static/manifest.json"
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  url: [host: "fast-harbor-37707.herokuapp.com", port: 443],
+  secret_key_base: System.get_env("CrWvQnnrG3lu4XDavYFH1kJCxQ75curSreP8jDPyDAcaHm60gOK9fjQmnJotDGp9")
 
  config :peepchat, Peepchat.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
+  url: System.get_env("postgres://eshnnwffidtgdp:uodszcNoA38cSGnU5f1LURGlY_@ec2-174-129-29-118.compute-1.amazonaws.com:5432/d760v5v5iah45u"),
   pool_size: 20
 
 # Do not print debug messages in production
