@@ -18,3 +18,4 @@ export default JSONAPIAdapter.extend(DataAdapterMixin, {
     }
   }
 });
+
