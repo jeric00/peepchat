@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'peepchat',
     environment: environment,
-    rootURL: '/',
+    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -18,10 +18,14 @@ module.exports = function(environment) {
       // when it is created
     },
     DS: {
-     host: 'http://localhost:4000',
-     namespace: 'api'
+      host: 'http://localhost:4000',
+      namespace: 'api'
+    },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.index',
+      routeAfterAuthentication: 'app.index'
     }
-
   };
 
   if (environment === 'development') {
@@ -34,6 +38,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -44,7 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'fast-harbor-37707.herokuapp.com';
+    ENV.DS.host = 'https://frozen-coast-87972.herokuapp.com';
   }
 
   return ENV;
