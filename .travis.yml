@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: RgGLZAoOn5erPOQLvoZTZhTujBkBx/f+3TXMMtVP3dEe4TswtMjiqwmJOl9C2c4774Ng4uN9LWoiYtYr7qp1IdfxrdHWDzsxEpGJ1CnZPFy3396Yml2woNHmKo+xA2CFAowsI16SZPdhDUsaScB+j/9Z4IuDZHM3kfDeSJNp0KB2SYsRgCKGy4JWgHIuvMVrVu7JW1oOPXzKNwIUl/HAHt8bHDAYwYCMX0gGyyhVOrMexNmWhgt23kIgbNyScRYKvXMon1rK96DyZAQHalhOYCc0IDGNlqHnoh1HIF8cpkn7rP7/yKwSa1ppSUdZoWw2pU6uX8FltQZ0tL22el8jRruKGo3bA6wRkyrZnWT4lW0c/9Y+U+4uBM55nTT3hOE1PDdToY5v2LT6ILNQk9DR6hbz7MGjn4k/H8XwjVbEM3bDcVfpibtYKyT8MUC6o+r/4QDgfnG8t+O7kzrQnzmPen50wLACRAKFSpi6JqvC24WhzmF/gY8N2yN380GVhxX7w0JNri/MglzcwKbQ2ClEfBG5LDdkKULk7+Uq4Wq9ysrxrfpeUCz8X7XkuZkDPDNRnFaNvbgW57+bdfl1k46ZbH+yG25t4KhmudTRpCcKd0a1dRmdKoJkaQShgKZtGWt/6eDaxIGDUEvR/W56aI+w135n1wtnCvq4GEw1qf34GnQ=
+  app: fast-harbor-37707
+  on:
+    repo: jeric00/peepchat
