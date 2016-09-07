@@ -1,9 +1,12 @@
 $roboto-font-path: '/assets/';
+@import "components/color";
+$primary-color: color('deep-orange', 'darken-2');
 @import "materialize";
 
 body {
   background-color: color('indigo', 'darken-2');
 }
+
 
 .toasts {
   display:block;
@@ -36,6 +39,14 @@ body {
     &.exiting {
       opacity: 0;
       margin-top: -40px;
+    }
+  }
+}
+
+.create-room {
+  .col {
+    .btn-flat {
+      margin-top: 1.5rem;
     }
   }
 }
