@@ -1,12 +1,13 @@
 $roboto-font-path: '/assets/';
+
 @import "components/color";
 $primary-color: color('deep-orange', 'darken-2');
 @import "materialize";
 
 body {
   background-color: color('indigo', 'darken-2');
-}
 
+}
 
 .toasts {
   display:block;
@@ -50,3 +51,14 @@ body {
     }
   }
 }
+
+.liquid-container {
+  transform: none;
+  -webkit-transform: none;
+}
+
+
+$me-chat-color: color('lime', 'lighten-2');
+$me-chat-text-color: black;
+$them-chat-color: color('indigo', 'darken-3');
+$them-chat-text-color: white;
